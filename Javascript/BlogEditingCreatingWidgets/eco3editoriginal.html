@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bBtnsp01{
+
+        }
+        .bBtn{
+            font-size: 18px;
+            margin: 8px;
+            padding: 8px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            width: max-content;
+        
+         
+           
+            
+            
+        }
+
+        .activeBtn{
+            background-color: rgb(255, 212, 157);
+            font-size: 18px;
+            margin: 8px;
+            padding: 8px;
+          
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+          
+            color: #f57c00;
+            background-color: #fff3e0;
+            width: max-content;
+            font-weight: bolder;
+
+
+        }
+        .boxBody{
+            
+            margin: 8px;
+            padding: 2px;
+            overflow: auto;
+            -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    
+           
+        }
+
+        .contentBox{
+            height: max-content;
+            padding: 10px;
+            margin: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            box-shadow: rgb(207, 207, 207) 3px 3px 3px 3px ;
+            cursor: auto;
+            border-radius: 3px 3px 3px;
+            overflow: auto;
+           
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="root" id="root">
+        
+        <div>
+            <span class="bBtnsp01">
+                <p onclick="Bbtn()" class="bBtn" id="bold-btn" >B</p>
+                  <button class="addbtn" onclick="NewTag()">ADD</button>
+            </span>
+            <div class="boxBody">
+                <div class="contentBox" onclick="TextBox()" contenteditable="true" id="containX101">
+
+                </div>
+
+            </div>
+
+            <div id="node">
+
+            </div>
+            
+            
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+     
+      
+    
+      
+       
+    // let ctV =  '/';
+   
+    // ctV.getElementByClassName(".contentBox").value;
+       
+      function TextBox(){
+
+        // var ctV = document.querySelector(".contentBox").value= " ";
+        // ctV.innerText= '&nbsp';
+        // const ctV = document.getElementsByClassName(".contentBox").value= "\u00A0\u00A0\u00A0" ;
+        // const g = document.querySelector(".contentBox");
+        // g.innerText = '&nbsp';
+        // const ctV = document.getElementsByClassName(".contentBox").value(g);
+            
+        const ctV = document.getElementsByClassName(".contentBox").value= "" ;
+          const mainPara = document.createElement("p");
+          mainPara.innerHTML = "&nbsp";
+        //   mainPara.contentEditable=true;
+        //   mainPara.innerText = "&nbsp";
+        //   mainPara.textContent = "&nbsp";
+        //   mainPara.innerHTML = "a \u00A0\u00A0\u00A0  b";
+          var  ctvCharnodes = document.createTextNode(ctV);
+          mainPara.appendChild(ctvCharnodes);
+
+          const textBoxBody = document.querySelector(".contentBox");
+          textBoxBody.appendChild(mainPara);
+          console.log("Aded");
+
+      
+      }
+
+
+
+
+        var boldBtn = document.getElementById('bold-btn');
+        function Bbtn(){
+            boldBtn.classList.toggle('activeBtn');
+
+          
+   
+        }
+        
+        const BtnAdd = document.querySelector(".addbtn");
+        // BtnAdd.addEventListener("click", NewTag);
+
+        function NewTag(){
+       //create new element html
+       let newElement = document.createElement("b");
+       //create new text node 
+       let textnode = document.createTextNode("Added");
+       
+       
+       // insert this textnode to newElement
+       newElement.appendChild(textnode);
+       newElement.style.marginLeft = "1.5px"
+       newElement.style.marginRight = "1.5px"
+       
+
+       let tArea = document.querySelector('.contentBox');
+       tArea.appendChild(newElement);
+        console.log("add")
+
+        let content = document.querySelector('#containX101');
+        console.log(content);
+      
+        }
+
+        
+        
+        
+    
+    </script>
+</body>
+</html>
