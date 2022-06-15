@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            
+        .bBtnsp01{
+    
+}
+.bBtn{
+    font-size: 18px;
+    margin: 8px;
+    padding: 8px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    width: max-content;
+
+ 
+   
+    
+    
+}
+
+.activeBtn{
+    background-color: rgb(255, 212, 157);
+    font-size: 18px;
+    margin: 8px;
+    padding: 8px;
+  
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  
+    color: #f57c00;
+    background-color: #fff3e0;
+    width: max-content;
+    font-weight: bolder;
+
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="bBtnsp01">
+            <button onclick="selectText()">Selectio</button>
+            <!-- <h2 onclick="pos(box)">Positionhshdhsydsydysydsyhdysd</h2> -->
+            <p class="bBtn" title="bold" onclick="makeBold()" id="bold-btn" >B</p>
+            <button onclick="change()">ChangeColor</button>
+        </span>
+
+    </div>
+
+    <iframe id="myframe" src="/frame.html" height="500px"  width="600px" frameborder="2"></iframe>
+   
+
+    <script>
+
+        // get frame
+
+        let frame = document.getElementById("myframe");
+        const vframe = frame.contentWindow;
+
+        var oDoc = vframe.document.getElementById("containX101");
+       
+
+        
+
+        focusMethod = function getFocus() {  
+            
+            window.onload.
+   vframe.getElementById("containX101").focus();
+}
+
+        function change(){
+
+        let gets = vframe.document.getElementById("co");
+        gets.style.color = "red";}
+           
+        // function foc(){
+        // window.onload.vframe.document.getElementById("containX101").focus();
+
+        
+// let keypress = vframe.document.querySelector(".contentBox");
+// // let keypress = document.querySelector(".boxBody");
+// keypress.addEventListener('keypress', function(event){
+// if(event.key === "Enter" ){
+// // clicked=true;
+// // console.log("Enter");
+// // event.preventDefault();
+// TextEd(event);
+// vframe.document.getElementsByClassName(".contentBox");
+// // fd.removeAttribute () = "onclick";
+// event.stopPropagation();
+// // event.preventDefault();
+// }
+// });
+
+        
+//         let content = vframe.document.getElementByClassName(".contentBox").value="";
+//         function TextEd(event){
+            
+// const mainPara = document.createElement("p");
+//   mainPara.innerHTML = "&nbsp";
+
+//   mainPara.setAttribute('id','para1');
+ 
+//   var  ctvCharnodes = document.createTextNode(content);
+//   mainPara.appendChild(ctvCharnodes);
+  
+
+//   const textBoxBody = vframe.document.querySelector(".contentBox");
+//   textBoxBody.appendChild(mainPara);
+//   console.log("Added");
+//   console.log("Enter key is pressed");
+//   document.getElementsByClassName(".contentBox").onclick = null;
+
+//         }
+
+
+// let keypress = vframe.document.querySelector(".contentBox");
+// // let keypress = document.querySelector(".boxBody");
+// keypress.addEventListener('keypress', function(event){
+// if(keypress ){
+// // clicked=true;
+// // console.log("Enter");
+// // event.preventDefault();
+// makeBold(event);
+// vframe.document.getElementsByClassName(".contentBox");
+// // fd.removeAttribute () = "onclick";
+// event.stopPropagation();
+// // event.preventDefault();
+// }
+// });
+
+function makeBold(){
+    
+let addClassColor = document.getElementById("bold-btn");
+addClassColor.classList.toggle('activeBtn');
+
+let quote = '';
+
+if(addClassColor.classList.contains('activeBtn') && 'onkeypress'){
+var  newElement = vframe.document.createElement("b");
+newElement.innerHTML = "&nbsp" + quote;
+newElement.click();
+
+
+
+// let contents = vframe.document.querySelector(".contentBox").value="";
+
+
+
+// var  textnode = vframe.document.createTextNode(contents);
+//   newElement.appendChild(textnode);
+let kid = vframe.document.getElementById("containX101");
+
+
+kid.focus(console.log("d"));
+
+let parent = vframe.document.querySelector(".contentBox");
+  parent.appendChild(newElement);
+  let lastChild = parent.lastChild.innerHTML;
+//   lastChild.innerHTML = "TextFocus";
+lastChild.innerHTML = "&nbsp";
+lastChild+kid;
+console.log(lastChild);
+}
+
+
+
+  
+  
+ 
+}
+
+
+    </script>
+    
+</body>
+</html>

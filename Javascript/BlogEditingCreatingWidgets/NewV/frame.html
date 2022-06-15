@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" style="background: none transprent;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.boxBody{
+    
+    margin: 8px;
+    padding: 2px;
+    overflow: auto;
+    -webkit-user-modify: read-write;
+     overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+   
+    padding: 10px;
+    margin: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: rgb(207, 207, 207) 3px 3px 6px 3px ;
+    cursor: auto;
+    border-radius: 3px 3px 3px;
+  
+
+   
+}
+
+.contentBox{
+    height: 700px;
+    cursor: auto;
+   
+   
+  
+}
+    </style>
+</head>
+<body id="containX101"  class="boxBody contentBox" onclick="TextBox()"  contenteditable="true " role="textbox" style="">
+    
+
+    <script>
+        
+// document.addEventListener("keydown", TextBox(ctV));
+var ctV = document.getElementsByClassName(".contentBox").nodevalue= "" ;
+function TextBox(event){
+
+ 
+const mainPara = document.createElement("p");
+  mainPara.innerHTML = "&nbsp";
+  mainPara.style.color = "blue";
+
+  mainPara.setAttribute('id','para1');
+ 
+  var  ctvCharnodes = document.createTextNode(ctV);
+  mainPara.appendChild(ctvCharnodes);
+  
+
+  const textBoxBody = document.querySelector(".contentBox");
+  textBoxBody.appendChild(mainPara);
+  console.log("Added");
+  console.log("Enter key is pressed");
+  document.getElementsByClassName(".contentBox").onclick = null;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
