@@ -35,12 +35,28 @@
 }
     </style>
 </head>
-<body id="containX101"  class="boxBody contentBox" onclick="TextBox()"  contenteditable="true " role="textbox" style="">
+<body id="containX101"  class="boxBody contentBox"  contenteditable="true " role="textbox" style="">
     
 
     <script>
         
-// document.addEventListener("keydown", TextBox(ctV));
+
+        
+        
+let keypress = document.querySelector(".contentBox");
+// let keypress = document.querySelector(".boxBody");
+keypress.addEventListener('keypress', function(event){
+if(event.key === "Enter" ){
+
+TextBox(event);
+document.getElementsByClassName(".contentBox");
+
+event.stopPropagation();
+
+}
+});
+
+        
 var ctV = document.getElementsByClassName(".contentBox").nodevalue= "" ;
 function TextBox(event){
 
@@ -61,8 +77,19 @@ const mainPara = document.createElement("p");
   console.log("Enter key is pressed");
   document.getElementsByClassName(".contentBox").onclick = null;
 
+}
 
+var oDoc = document.getElementById("containX101");
+window.onload = defalut();
 
+function defalut(){
+var  newElement = document.createElement("p");
+newElement.innerHTML = "&nbsp";
+newElement.style.color = "#FFB218"
+newElement.style.fontSize = '25px';
+oDoc.appendChild(newElement);
+console.log("add");
+oDoc.focus();
 }
 
 
